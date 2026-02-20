@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yusufxon Axmatov | Daho Dev Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="loader">
+        <div class="loader-ring"></div>
+        <span class="char b">B</span>
+        <span class="char x">✕</span>
+        <span class="char y">Y</span>
+        <div class="f-name">YUSUFXON AXMATOV</div>
+    </div>
+
+    <div class="term-icon" onclick="toggleAdmin()"><i class="fas fa-terminal"></i></div>
+
+    <div id="admin-panel">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+            <h2 style="color:white; font-family:monospace;">> Daho Terminal v2.0</h2>
+            <i class="fas fa-times" style="color:var(--accent); cursor:pointer; font-size: 30px;" onclick="toggleAdmin()"></i>
+        </div>
+        <button class="btn" onclick="openVault()" style="margin-top:20px">TERMINALGA_KIRISH</button>
+        <div id="logs" style="margin-top:40px; display:none; color:var(--accent); font-family:monospace;">
+            <p>> Ma'lumotlar bazasi ulanmoqda...</p>
+            <div id="msg-list" style="color:white; margin-top:20px"></div>
+        </div>
+    </div>
+
+    <div class="side side-l">
+        <div class="social">
+            <a href="https://github.com/techprogramm25-boop" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.instagram.com/yusufxonpro/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://t.me/Musilmana_y_a_xmat0v777" target="_blank"><i class="fab fa-telegram"></i></a>
+        </div>
+        <div class="v-line"></div>
+    </div>
+
+    <div class="side side-r">
+        <p style="writing-mode: vertical-rl; margin-bottom: 25px; color: var(--accent); font-family: monospace; letter-spacing: 2px;">techprogramm25@gmail.com</p>
+        <div class="v-line"></div>
+    </div>
+
+    <div id="content">
+        <section id="hero" data-aos="fade-up">
+            <p class="num">Assalomu alaykum, men —</p>
+            <h1 class="title">Yusufxon Axmatov.</h1>
+            <h2 class="title" style="color:var(--text); font-size: clamp(25px, 5vw, 45px);">Men daho dasturchiman.</h2>
+            <p style="max-width: 650px; font-size: 20px; line-height: 1.6;">Men 10 yoshdaman va Jizzaxdan turib butun dunyo uchun eng aqlli dasturlarni yozaman. Kod yozish — mening hayotim.</p>
+            <div style="margin-top:40px;"><a href="#history" class="btn">Daho bilan tanishing</a></div>
+        </section>
+
+        <section id="history" data-aos="fade-right">
+            <p class="num">01. Men Haqimda</p>
+            <h2 class="title" style="font-size: 40px;">Daho Yo'li</h2>
+            <div class="grid">
+                <div class="card" data-aos="zoom-in">
+                    <h3>Erta Qadam</h3>
+                    <p>Dasturlash olamiga juda yosh kirganman va bu yo'lda to'xtamayman.</p>
+                </div>
+                <div class="card" data-aos="zoom-in" data-aos-delay="200">
+                    <h3>Jizzax Faxri</h3>
+                    <p>O'zbekiston IT sohasini dunyo darajasiga olib chiqish mening maqsadim.</p>
+                </div>
+            </div>
+        </section>
+
+        <section data-aos="fade-left">
+            <p class="num">02. Texnologiyalar</p>
+            <h2 class="title" style="font-size: 40px;">Mening Bilimlarim</h2>
+            <div class="grid">
+                <div class="card"><h3>Python & AI</h3><p>Aqlli tizimlar va botlar yaratish.</p></div>
+                <div class="card"><h3>Web Dev</h3><p>Zamonaviy va professional saytlar qurish.</p></div>
+            </div>
+        </section>
+
+        <section id="kabinet" data-aos="fade-up">
+            <p class="num">03. Shaxsiy Kabinet</p>
+            <h2 class="title" style="font-size: 40px;">Daho bilan aloqa</h2>
+            <div class="premium-box" data-aos="flip-up">
+                <h3 style="color:var(--gold); margin-bottom:15px;"><i class="fas fa-crown"></i> Premium Gmail (VIP)</h3>
+                <p style="color:white; margin-bottom:10px;">VIP mijozlar uchun maxsus aloqa liniyasi.</p>
+                <p style="font-family:monospace; color:var(--gold); font-size: 18px;">techprogramm25@gmail.com</p>
+            </div>
+            <div style="margin-top:50px; background:var(--card); padding:40px; border-radius:15px;" data-aos="fade-up">
+                <h3 style="color:white; margin-bottom:25px;">Xabar yuborish</h3>
+                <input type="text" id="sender" placeholder="Ismingiz">
+                <textarea id="message" rows="4" placeholder="Xabaringizni yozing..."></textarea>
+                <button class="btn" style="width:100%" onclick="sendData()">XABARNI YUBORISH</button>
+            </div>
+        </section>
+
+        <footer style="text-align:center; padding:60px 0; border-top: 1px solid rgba(255,255,255,0.05);">
+            <p style="color:var(--accent); font-family:monospace; letter-spacing: 5px;">YUSUFXON AXMATOV © 2026</p>
+        </footer>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+:root { 
+    --bg: #030712; 
+    --accent: #10b981; 
+    --text: #9ca3af; 
+    --white: #f9fafb; 
+    --card: rgba(17, 24, 39, 0.8); 
+    --red: #ef4444; 
+    --gold: #f59e0b;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; font-family: 'Space Grotesk', sans-serif; }
+body { background: var(--bg); color: var(--text); overflow-x: hidden; }
+
+/* --- LOADER --- */
+#loader { position: fixed; inset: 0; background: var(--bg); display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 10000; transition: 0.8s; }
+.loader-ring { width: 120px; height: 120px; border: 4px solid transparent; border-top: 4px solid var(--accent); border-radius: 50%; animation: spin 1s linear infinite; position: absolute; }
+.char { position: absolute; font-size: 55px; font-weight: 900; opacity: 0; }
+.b { color: var(--accent); animation: fI 0.5s 1s forwards, fO 0.5s 2s forwards; }
+.x { color: var(--red); animation: fI 0.4s 2.2s forwards, fO 0.3s 3s forwards; }
+.y { color: var(--accent); animation: fI 0.5s 3.2s forwards; text-shadow: 0 0 20px var(--accent); }
+.f-name { margin-top: 150px; color: var(--white); letter-spacing: 10px; opacity: 0; animation: fI 1s 4s forwards; font-size: 18px; }
+
+@keyframes spin { 100% { transform: rotate(360deg); } }
+@keyframes fI { to { opacity: 1; } }
+@keyframes fO { to { opacity: 0; transform: scale(0); } }
+
+/* --- SIDEBARS --- */
+.side { position: fixed; bottom: 0; display: flex; flex-direction: column; align-items: center; z-index: 500; }
+.side-l { left: 30px; } .side-r { right: 30px; }
+.social a { color: var(--text); font-size: 26px; margin-bottom: 25px; transition: 0.4s; text-decoration: none; }
+.social a:hover { color: var(--accent); transform: scale(1.2) translateY(-5px); filter: drop-shadow(0 0 10px var(--accent)); }
+.v-line { width: 2px; height: 120px; background: linear-gradient(transparent, var(--accent)); }
+
+/* --- SECTIONS --- */
+#content { opacity: 0; transition: 1.5s; padding: 0 12%; }
+section { min-height: 100vh; padding: 100px 0; display: flex; flex-direction: column; justify-content: center; position: relative; }
+.num { color: var(--accent); font-family: monospace; font-size: 18px; margin-bottom: 10px; }
+.title { color: var(--white); font-size: clamp(35px, 7vw, 75px); font-weight: 900; line-height: 1.1; margin-bottom: 25px; }
+.btn { padding: 16px 35px; border: 1.5px solid var(--accent); color: var(--accent); background: transparent; cursor: pointer; text-decoration: none; display: inline-block; font-weight: bold; transition: 0.4s; border-radius: 4px; }
+.btn:hover { background: rgba(16, 185, 129, 0.1); box-shadow: 0 0 20px rgba(16, 185, 129, 0.4); }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
+.card { background: var(--card); padding: 35px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.05); backdrop-filter: blur(10px); transition: 0.4s; }
+.card:hover { border-color: var(--accent); transform: translateY(-10px); box-shadow: 0 10px 30px -15px rgba(2,12,27,0.7); }
+.card h3 { color: var(--white); margin-bottom: 15px; font-size: 22px; }
+
+.premium-box { border: 2px solid var(--gold); padding: 30px; border-radius: 15px; margin-top: 30px; position: relative; background: rgba(245, 158, 11, 0.05); }
+.premium-box::after { content: "PULLIK"; position: absolute; top: 15px; right: -35px; background: var(--gold); color: black; padding: 5px 45px; transform: rotate(45deg); font-weight: bold; font-size: 12px; }
+
+input, textarea { width: 100%; padding: 15px; margin-bottom: 15px; background: #0f172a; border: 1px solid #1e293b; color: white; border-radius: 8px; outline: none; transition: 0.3s; }
+input:focus { border-color: var(--accent); }
+
+.term-icon { position: fixed; top: 30px; right: 40px; color: var(--accent); font-size: 32px; cursor: pointer; z-index: 2000; transition: 0.3s; }
+.term-icon:hover { transform: rotate(90deg); color: var(--white); }
+#admin-panel { display: none; position: fixed; inset: 0; background: rgba(3, 7, 18, 0.99); z-index: 5000; padding: 10%; border-left: 5px solid var(--accent); }
